@@ -11,6 +11,10 @@
         <option *ngFor="let problema of problemasDisco" [value]="problema.id">{{problema.desc}}</option>
         </select>
         <br>
+        <select class="form-select" formControlName="problema">
+            <option selected>Seleccione el problema...</option>
+            <option *ngFor="let problema of problemasDisco" [value]="problema.id">{{problema.desc}}</option>
+        </select>
         <button type="submit" class="btn btn-warning">Consultar</button>
         <hr>
         <div class="container">
