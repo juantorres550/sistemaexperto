@@ -8,7 +8,7 @@
         <label for="floatingInput">Problema:</label>
         <select class="form-select" formControlName="problema">
         <option selected>Seleccione el problema...</option>
-        <option *ngFor="let problema of problemasDisco">{{problema.desc}}</option>
+        <option *ngFor="let problema of problemasDisco" [value]="problema.id">{{problema.desc}}</option>
         </select>
         <br>
         <button type="submit" class="btn btn-warning">Consultar</button>

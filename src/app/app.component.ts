@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'sisExp';
   
   problemasDisco=[
-    { id: 1, desc:'No se encontro disco duro', compas:'disco' },
+    { id: 1, problema:'', desc:'No se encontro disco duro', compas:'disco' },
     { id: 2, desc:'No se puede iniciar el sistema', compas:'disco' },
     { id: 3, desc:'Disco duro corrupto', compas:'disco' }
   ]
