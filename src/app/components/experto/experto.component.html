@@ -1,0 +1,152 @@
+<form>
+    <h3>Sistema experto para solucionar problema de computador lento</h3>
+    <p>Ya realizo un analisis de antivirus?</p>
+    <select name="virus" #virus (change)="op1()">
+        <option value="def" selected></option>
+        <option value="1"> Si</option>
+        <option value="2"> No</option>
+    </select>
+
+   <!-- Respuesta si antivirus -->
+    <div *ngIf="ex1 == 1">
+        <p>
+            Porfavor abrir administrador de tareas
+        </p>
+        <label>El consumo de RAM es alto?</label><br>
+        <select name="virus" #op3 (change)="opt3()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+        <!-- NO -->
+        <div *ngIf="ro3 == 2">
+            <label>¿Al abrir el administrador de tareas hay consumo alto de servicios?</label><br>
+            <select name="virus" #op9 (change)="opt9()">
+                <option value="def" selected></option>
+                <option value="1"> Si</option>
+                <option value="2"> No</option>
+            </select>
+        </div>
+            <!-- SI -->
+            <div *ngIf="ro9 == 1">
+                <p>Deshabilitar los menos necesarios(servicio de informar errores, entre otros)</p>
+            </div>
+            <!-- NO -->
+            <div *ngIf="ro9 == 2">
+                <label>¿El equipo esta sobrecalentado?</label><br>
+                <select name="virus" #op10 (change)="opt10()">
+                    <option value="def" selected></option>
+                    <option value="1"> Si</option>
+                    <option value="2"> No</option>
+                </select>
+            </div>
+                <!-- SI -->
+                <div *ngIf="ro10 == 1">
+                    <p>Cambiar la refrigeración, problema asociado al CPU</p>
+                </div>
+                <!-- NO -->
+                <div *ngIf="ro10 == 2">
+                    <p>Procesador defectuoso</p>
+                </div>
+
+
+    <!-- SI -->
+    <div *ngIf="ro3 == 1">
+        <p>
+            Controlar la cantidad de procesos abiertos para evitar el exceso de consumo
+        </p>
+        <label>¿El problema persiste?</label><br>
+        <select name="virus" #op7 (change)="opt7()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+        <!-- SI -->
+        <div *ngIf="ro7 == 1">
+            <label>¿La memoria RAM utilizable es menor a la total?</label><br>
+            <select name="virus" #op8 (change)="opt8()">
+                <option value="def" selected></option>
+                <option value="1"> Si</option>
+                <option value="2"> No</option>
+            </select>
+        </div>
+            <!-- SI -->
+            <div *ngIf="ro8 == 1">
+                <p>Revisar conexiones y limpiar los contactos de conexion de la RAM a la MotherBoard</p>
+            </div>
+            <!-- NO -->
+
+        <!-- NO -->
+        <div *ngIf="ro7 == 2">
+            <p>Problema solucionado asociado a RAM</p>
+        </div>
+    
+    <!-- Respuesta no antivirus -->
+    <div *ngIf="ex1 == 2">
+        <p>
+            Analizar el computador con SpyHunter
+        </p>
+        <label>¿El resultado arrojó virus?</label><br>
+        <select name="virus" #op2 (change)="opt2()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+
+    <!-- Respuesta: Si => Solucion 1 -->
+    <div *ngIf="ro2 == 1">
+        <p>
+            Realizar una limpieza de virus!
+        </p>
+    </div>
+    <!-- Respuesta: No => Continua problema -->
+    <div *ngIf="ro2 == 2">
+        <p>Revisar el disco con HWinfo</p>
+        <label>¿El resultado arrojó sectores del disco dañados?</label><br>
+        <select name="virus" #op4 (change)="opt4()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+
+    <div *ngIf="ro4 == 1">
+        <p>Reparar sectores defectuosos con la herramienta integrada de windows</p>
+        <label>¿Despues de reparar los sectores el problema persiste?</label><br>
+        <select name="virus" #op5 (change)="opt5()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+    <!-- NO -->
+    <div *ngIf="ro5 == 2">
+        <p>Se resolvio el problema del disco!</p>
+    </div>
+    <!-- SI -->
+    <div *ngIf="ro5 == 1">
+        <p>Es recomendable cambiar el disco</p>
+    </div>
+
+    <div *ngIf="ro4 == 2">
+        <p>Revisar conexión del cable SATA</p>
+        <label>¿Se soluciono el problema del disco?</label><br>
+        <select name="virus" #op6 (change)="opt6()">
+            <option value="def" selected></option>
+            <option value="1"> Si</option>
+            <option value="2"> No</option>
+        </select>
+    </div>
+    <!-- SI -->
+    <div *ngIf="ro6 == 1">
+        <p>Problema solucionado asociado al disco!</p>
+    </div>
+    <!-- NO -->
+    <div *ngIf="ro6 == 2">
+        <p>Es recomendable cambiar el disco!</p>
+    </div>
+    
+</form>
