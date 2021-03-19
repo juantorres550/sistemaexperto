@@ -96,7 +96,7 @@ export class AppComponent {
       {
         img:'https://mundocontact.com/wp-content/uploads/2018/11/Intel-i9-Gen-Core-1.jpg',
         sols:['Realizar una limpieza de malware y troyanos',
-        'Realizar una limpieza de malware y troyanos'],
+        'Revisar disipador de calor'],
         name:'CPU'
       }
       
